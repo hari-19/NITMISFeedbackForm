@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $type = $details["TYPE"];
             $fac_name = $details["FAC_NAME"];
             $course_name = $details["COURSE_NAME"];
-            $query_lab = "select avg(Q_1), avg(Q_2), avg(Q_3), avg(Q_4), avg(Q_5) from lab_feedback where FAC_ID='".$data->fac_id."' AND COURSE_ID='".$data->course_id."' AND DATE_SUB(now(), INTERVAL 6 MONTH)";
-            $query_theory = "select avg(Q_1), avg(Q_2), avg(Q_3), avg(Q_4), avg(Q_5), avg(Q_6), avg(Q_7), avg(Q_8), avg(Q_9), avg(Q_10)  from theory_feedback where FAC_ID='".$data->fac_id."' AND COURSE_ID='".$data->course_id."' AND DATE_SUB(now(), INTERVAL 6 MONTH)";
+            $query_lab = "select avg(Q_1), avg(Q_2), avg(Q_3), avg(Q_4), avg(Q_5) from lab_feedback where FAC_ID='".$data->fac_id."' AND COURSE_ID='".$data->course_id."' AND DATE > DATE_SUB(now(), INTERVAL 6 MONTH)";
+            $query_theory = "select avg(Q_1), avg(Q_2), avg(Q_3), avg(Q_4), avg(Q_5), avg(Q_6), avg(Q_7), avg(Q_8), avg(Q_9), avg(Q_10)  from theory_feedback where FAC_ID='".$data->fac_id."' AND COURSE_ID='".$data->course_id."' AND DATE > DATE_SUB(now(), INTERVAL 6 MONTH)";
             
             $feedback = array();
             
