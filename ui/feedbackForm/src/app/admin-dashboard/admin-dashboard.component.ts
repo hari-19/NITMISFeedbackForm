@@ -92,6 +92,14 @@ export class AdminDashboardComponent implements OnInit, DoCheck {
     }
     else {
       this.isSummary = false;
+      this.course = this.courseList[0];
+      this.year = this.yearList[0];
+      this.department = this.departmentList[0];
+
+      this.oldCourse = this.course;
+      this.oldYear = this.year;
+      this.oldDepartment = this.department;
+      this.getDefaulters();
     }
   }
 
